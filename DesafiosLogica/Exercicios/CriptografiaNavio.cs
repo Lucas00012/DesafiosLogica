@@ -43,18 +43,17 @@
                 if (referencia % 3 == 0 && deslocamento == -4)
                 {
                     array[i + deslocamento] = Inverter(caractere);
-                    continue;
                 }
-
-                if (referencia % 4 == 0)
+                else if (referencia % 4 == 0)
                 {
                     array[i + deslocamento] = deslocamento == -4 ? Inverter(caractere) : caractere;
-                    deslocamento = -deslocamento;
+                    deslocamento *= -1;
                     referencia = 0;
-                    continue;
                 }
-
-                array[i + deslocamento] = caractere;
+                else
+                {
+                    array[i + deslocamento] = caractere;
+                }
             }
 
             return array;
