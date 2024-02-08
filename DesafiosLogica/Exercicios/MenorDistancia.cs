@@ -47,7 +47,7 @@
 
         private static void Preencher(int[] array, int identificador)
         {
-            Console.Write($"Array nº {identificador}: ");
+            Console.Write($"Itens array nº {identificador} (separados por vírgula): ");
             var linha = Console.ReadLine().Split(",");
 
             for (int i = 0; i < array.Length; i++)

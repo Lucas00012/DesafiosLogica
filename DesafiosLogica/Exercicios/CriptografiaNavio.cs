@@ -1,4 +1,6 @@
-﻿namespace DesafiosLogica.Exercicios
+﻿using System.Text;
+
+namespace DesafiosLogica.Exercicios
 {
     public class CriptografiaNavio
     {
@@ -62,27 +64,26 @@
 
         private static string Descriptografar(char[] array)
         {
-            var resposta = string.Empty;
+            var resposta = new StringBuilder();
             var referencia = 0;
             var ascii = 0;
 
             foreach (var caractere in array)
             {
-                if (caractere == ' ')
-                    continue;
-
-                referencia++;
-                ascii += caractere == '1' ? (int)Math.Pow(2, 8 - referencia) : 0;
-
-                if (referencia == 8)
+                if (caractere != ' ')
                 {
-                    resposta += (char)ascii;
+                    referencia++;
+                    ascii += caractere == '1' ? (int)Math.Pow(2, 8 - referencia) : 0;
+                }
+                else
+                {
+                    resposta.Append((char)ascii);
                     referencia = 0;
                     ascii = 0;
                 }
             }
 
-            return resposta;
+            return resposta.ToString();
         }
 
         private static char Inverter(char caractere)
