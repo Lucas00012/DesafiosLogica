@@ -70,12 +70,13 @@ namespace DesafiosLogica.Exercicios
 
             foreach (var caractere in array)
             {
-                if (caractere != ' ')
-                {
-                    referencia++;
-                    ascii += caractere == '1' ? (int)Math.Pow(2, 8 - referencia) : 0;
-                }
-                else
+                if (caractere == ' ')
+                    continue;
+
+                referencia++;
+                ascii += caractere == '1' ? (int)Math.Pow(2, 8 - referencia) : 0;
+
+                if (referencia == 8)
                 {
                     resposta.Append((char)ascii);
                     referencia = 0;
