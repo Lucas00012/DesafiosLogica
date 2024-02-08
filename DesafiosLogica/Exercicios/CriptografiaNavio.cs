@@ -40,11 +40,11 @@
 
                 referencia++;
 
-                if (referencia % 3 == 0 && deslocamento == -4)
+                if (referencia == 3 && deslocamento == -4)
                 {
                     array[i + deslocamento] = Inverter(caractere);
                 }
-                else if (referencia % 4 == 0)
+                else if (referencia == 4)
                 {
                     array[i + deslocamento] = deslocamento == -4 ? Inverter(caractere) : caractere;
                     deslocamento *= -1;
@@ -74,7 +74,7 @@
                 referencia++;
                 ascii += caractere == '1' ? (int)Math.Pow(2, 8 - referencia) : 0;
 
-                if (referencia % 8 == 0)
+                if (referencia == 8)
                 {
                     resposta += (char)ascii;
                     referencia = 0;
