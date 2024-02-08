@@ -40,19 +40,20 @@
 
                 referencia++;
 
+                var posicao = i + deslocamento;
                 if (referencia == 3 && deslocamento == -4)
                 {
-                    array[i + deslocamento] = Inverter(caractere);
+                    array[posicao] = Inverter(caractere);
                 }
                 else if (referencia == 4)
                 {
-                    array[i + deslocamento] = deslocamento == -4 ? Inverter(caractere) : caractere;
+                    array[posicao] = deslocamento == -4 ? Inverter(caractere) : caractere;
                     deslocamento *= -1;
                     referencia = 0;
                 }
                 else
                 {
-                    array[i + deslocamento] = caractere;
+                    array[posicao] = caractere;
                 }
             }
 
