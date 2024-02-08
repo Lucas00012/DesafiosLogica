@@ -66,9 +66,8 @@
             var referencia = 0;
             var ascii = 0;
 
-            for (var i = 0; i < array.Length; i++)
+            foreach (var caractere in array)
             {
-                var caractere = array[i];
                 if (caractere == ' ')
                     continue;
 
